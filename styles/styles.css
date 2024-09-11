@@ -13,15 +13,19 @@
 :root {
   /* colors */
   --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
+  --light-grey-color: #f8f8f8;
+  --dark-grey-color: #505050;
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
+  --dark-background-color: #000;
+  --footer-text: #f7f7f7;
+  --hr-color: #ffea00;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --heading-font-family: "Asar", georgia, "Times New Roman", times, serif;
+  --body-font-family: "Source Sans Pro", "Helvetica Neue", helvetica, arial,
+    sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -35,6 +39,7 @@
   --heading-font-size-m: 27px;
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
+  --heading-font-size-xxs: 18px;
 
   /* nav height */
   --nav-height: 64px;
@@ -114,7 +119,13 @@ h6 {
 
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
+
+h3 { 
+  font-size: var(--heading-font-size-xxs);    
+  margin: 0;
+  text-transform: uppercase;
+}
+
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
@@ -137,7 +148,7 @@ pre {
 pre {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--light-color);
+  background-color: var(--light-grey-color);
   overflow-x: auto;
   white-space: pre;
 }
@@ -199,7 +210,7 @@ button:focus {
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
+  background-color: var(--light-grey-color);
   cursor: unset;
 }
 
@@ -251,7 +262,30 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background-color: var(--light-grey-color);
   margin: 0;
   padding: 40px 0;
+}
+
+h2::after {
+  display: block;
+  width: 84px;
+  padding-top: 8px;
+  content: "";
+  border-bottom: 2px solid var(--hr-color, #ffea00);
+}
+
+.section .button-container > a {
+    background-color: var(--hr-color, #ffea00);
+    border-radius: 0;
+    color: #202020;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 1em 2.5em;
+    text-transform: uppercase;
+}
+
+.columns-wrapper img {
+  width: 200px;
+  height: 200px;
 }
