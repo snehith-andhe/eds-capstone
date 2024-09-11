@@ -3,6 +3,7 @@ import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
+const currentPath = `${window.location.pathname.split('/')[1]}`;
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -58,6 +59,11 @@ function focusNavSection() {
  */
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+    if (section.innerHTML.includes(currentPath) && currentPath !== '') {
+      section.firstElementChild.className = 'active';
+    } else {
+      section.firstElementChild.className = '';
+    }
     section.setAttribute('aria-expanded', expanded);
   });
 }

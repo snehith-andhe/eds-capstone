@@ -1,0 +1,35 @@
+/* Writer block rules */
+.writer-lists {
+    display: flex;
+    gap: 5rem;
+}
+
+.writer-lists picture {
+  display:inline-block;
+  vertical-align:middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #e3e5e6;
+}
+
+.writer-lists .middle {
+  width: 100%;
+}
+
+.social-links-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 18px;
+    background-color: #000;
+    padding-top: 14px;
+    width: 112px;
+    padding-left: 18px;
+}
+
+.social-links-list img, .social-links-list svg {
+    width: 20px;
+    height: 20px;
+}
